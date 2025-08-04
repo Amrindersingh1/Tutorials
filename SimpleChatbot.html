@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Carousel Slides</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&family=Space+Mono:wght@400;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #d9f991; /* Bright lime green background */
+        }
+        .slide {
+            display: none;
+        }
+        .slide.active {
+            display: block;
+        }
+        .slide-container {
+            min-height: 70vh; /* Ensure content is centered vertically */
+        }
+        /* Custom styles for neo-brutalist look */
+        .brutalist-card {
+            border: 4px solid #000;
+            box-shadow: 8px 8px 0px 0px #000;
+        }
+        .brutalist-button {
+            border: 3px solid #000;
+            font-family: 'Space Mono', monospace;
+            transition: transform 0.1s ease-in-out;
+        }
+        .brutalist-button:hover {
+            transform: translate(3px, 3px);
+            box-shadow: none;
+        }
+        .brutalist-shadow {
+            box-shadow: 6px 6px 0px 0px #000;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+
+    <div class="max-w-2xl w-full bg-white brutalist-card p-8 md:p-12">
+
+        <!-- Slide Content Area -->
+        <div id="slides-container" class="slide-container flex flex-col justify-between">
+            
+            <!-- Slide 1 -->
+            <div class="slide active">
+                <h1 class="text-3xl md:text-4xl font-black text-black mb-4 brutalist-shadow bg-yellow-200 p-2 inline-block">
+                    <span class="text-indigo-900">🚀</span> Build an AI Agent in 40 Lines
+                </h1>
+                <p class="text-2xl md:text-3xl font-black mb-4 text-black">
+                    "Your First AI Agent in Just 40 Lines of Code!"
+                </p>
+                <ul class="list-disc list-inside space-y-2 text-lg text-black font-bold">
+                    <li>Minimal AI chatbot with Streamlit</li>
+                    <li>Google Gemini API integration</li>
+                    <li>Clean, user-friendly interface</li>
+                    <li>Session-based chat history</li>
+                    <li>Secure API key handling</li>
+                </ul>
+                <p class="mt-8 text-sm text-gray-500 font-bold">@AmrinderSingh</p>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide">
+                <h1 class="text-3xl md:text-4xl font-black text-black mb-4 brutalist-shadow bg-yellow-200 p-2 inline-block">
+                    <span class="text-indigo-900">📋</span> Setup & Requirements
+                </h1>
+                <h2 class="text-xl md:text-2xl font-black mb-4 text-black">
+                    What you need:
+                </h2>
+                <ul class="list-disc list-inside space-y-2 text-lg text-black font-bold">
+                    <li>Python 3.7+</li>
+                    <li>Basic Python knowledge</li>
+                    <li>A Google AI Studio account</li>
+                </ul>
+                <p class="mt-4 text-lg font-black text-black">Install packages:</p>
+                <div class="bg-gray-800 text-gray-300 brutalist-shadow border-4 border-black p-4 mt-4 font-mono">
+                    <div class="bg-gray-700 text-sm p-2 -m-4 mb-4 border-b-4 border-black flex items-center gap-2">
+                        <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                        <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                    </div>
+                    <pre class="overflow-x-auto text-lime-300"><code>pip install streamlit google-generativeai</code></pre>
+                </div>
+                <p class="mt-8 text-sm text-gray-500 font-bold">@AmrinderSingh</p>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide">
+                <h1 class="text-3xl md:text-4xl font-black text-black mb-4 brutalist-shadow bg-yellow-200 p-2 inline-block">
+                    <span class="text-indigo-900">🔧</span> Step 1: Import Libraries
+                </h1>
+                <h2 class="text-xl md:text-2xl font-black mb-4 text-black">
+                    Get started with essential imports.
+                </h2>
+                <div class="bg-gray-800 text-gray-300 brutalist-shadow border-4 border-black p-4 mt-4 font-mono">
+                    <div class="bg-gray-700 text-sm p-2 -m-4 mb-4 border-b-4 border-black flex items-center gap-2">
+                        <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                        <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                    </div>
+                    <pre class="overflow-x-auto text-lime-300"><code>import streamlit as st
+import google.generativeai as genai</code></pre>
+                </div>
+                <ul class="list-disc list-inside space-y-2 text-lg text-black font-bold mt-4">
+                    <li>`streamlit` for the web UI</li>
+                    <li>`google.generativeai` for the LLM</li>
+                </ul>
+                <p class="mt-8 text-sm text-gray-500 font-bold">@AmrinderSingh</p>
+            </div>
+            
+            <!-- Slide 4 -->
+            <div class="slide">
+                <h1 class="text-3xl md:text-4xl font-black text-black mb-4 brutalist-shadow bg-yellow-200 p-2 inline-block">
+                    <span class="text-indigo-900">⚙️</span> Step 2: Configure Page Settings
+                </h1>
+                <h2 class="text-xl md:text-2xl font-black mb-4 text-black">
+                    Add a professional touch to your app.
+                </h2>
+                <div class="bg-gray-800 text-gray-300 brutalist-shadow border-4 border-black p-4 mt-4 font-mono">
+                    <div class="bg-gray-700 text-sm p-2 -m-4 mb-4 border-b-4 border-black flex items-center gap-2">
+                        <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                        <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                    </div>
+                    <pre class="overflow-x-auto text-lime-300"><code>st.set_page_config(
+    page_title="Minimal Gemini Chatbot", 
+    page_icon=":robot_face:"
+)</code></pre>
+                </div>
+                <ul class="list-disc list-inside space-y-2 text-lg text-black font-bold mt-4">
+                    <li>Set the page title for the browser tab</li>
+                    <li>Add a favicon emoji for visual flair</li>
+                </ul>
+                <p class="mt-8 text-sm text-gray-500 font-bold">@AmrinderSingh</p>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="slide">
+                <h1 class="text-3xl md:text-4xl font-black text-black mb-4 brutalist-shadow bg-yellow-200 p-2 inline-block">
+                    <span class="text-indigo-900">🎨</span> Step 3: Create the App Header
+                </h1>
+                <h2 class="text-xl md:text-2xl font-black mb-4 text-black">
+                    Introduce your chatbot to the user.
+                </h2>
+                <div class="bg-gray-800 text-gray-300 brutalist-shadow border-4 border-black p-4 mt-4 font-mono">
+                    <div class="bg-gray-700 text-sm p-2 -m-4 mb-4 border-b-4 border-black flex items-center gap-2">
+                        <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                        <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                    </div>
+                    <pre class="overflow-x-auto text-lime-300"><code>st.title("Minimal Gemini Chatbot")
+st.write("This is a bare-bones example...")
+st.write("Please enter your Gemini API Key...")</code></pre>
+                </div>
+                <ul class="list-disc list-inside space-y-2 text-lg text-black font-bold mt-4">
+                    <li>Create a main title</li>
+                    <li>Add a brief description and instructions</li>
+                </ul>
+                <p class="mt-8 text-sm text-gray-500 font-bold">@AmrinderSingh</p>
+            </div>
+
+            <!-- Slide 6 -->
+            <div class="slide">
+                <h1 class="text-3xl md:text-4xl font-black text-black mb-4 brutalist-shadow bg-yellow-200 p-2 inline-block">
+                    <span class="text-indigo-900">🔐</span> Step 4: Secure API Key Input
+                </h1>
+                <h2 class="text-xl md:text-2xl font-black mb-4 text-black">
+                    Handle sensitive data in a secure way.
+                </h2>
+                <div class="bg-gray-800 text-gray-300 brutalist-shadow border-4 border-black p-4 mt-4 font-mono">
+                    <div class="bg-gray-700 text-sm p-2 -m-4 mb-4 border-b-4 border-black flex items-center gap-2">
+                        <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                        <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                    </div>
+                    <pre class="overflow-x-auto text-lime-300"><code>with st.sidebar:
+    st.header("Configuration")
+    api_key = st.text_input(
+        "Enter your Gemini API Key:", 
+        type="password"
+    )
+    st.markdown("---")</code></pre>
+                </div>
+                <ul class="list-disc list-inside space-y-2 text-lg text-black font-bold mt-4">
+                    <li>Use a sidebar for API key input</li>
+                    <li>`type="password"` hides the key from view</li>
+                </ul>
+                <p class="mt-8 text-sm text-gray-500 font-bold">@AmrinderSingh</p>
+            </div>
+
+            <!-- Slide 7 -->
+            <div class="slide">
+                <h1 class="text-3xl md:text-4xl font-black text-black mb-4 brutalist-shadow bg-yellow-200 p-2 inline-block">
+                    <span class="text-indigo-900">💾</span> Step 5: Initialize Chat History
+                </h1>
+                <h2 class="text-xl md:text-2xl font-black mb-4 text-black">
+                    Ensure conversations persist.
+                </h2>
+                <div class="bg-gray-800 text-gray-300 brutalist-shadow border-4 border-black p-4 mt-4 font-mono">
+                    <div class="bg-gray-700 text-sm p-2 -m-4 mb-4 border-b-4 border-black flex items-center gap-2">
+                        <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                        <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                    </div>
+                    <pre class="overflow-x-auto text-lime-300"><code>if "messages" not in st.session_state:
+    st.session_state.messages = []</code></pre>
+                </div>
+                <ul class="list-disc list-inside space-y-2 text-lg text-black font-bold mt-4">
+                    <li>Use Streamlit's `session_state`</li>
+                    <li>Initialize an empty list for messages</li>
+                </ul>
+                <p class="mt-8 text-sm text-gray-500 font-bold">@AmrinderSingh</p>
+            </div>
+
+            <!-- Slide 8 -->
+            <div class="slide">
+                <h1 class="text-3xl md:text-4xl font-black text-black mb-4 brutalist-shadow bg-yellow-200 p-2 inline-block">
+                    <span class="text-indigo-900">💬</span> Step 6: Display Chat Messages
+                </h1>
+                <h2 class="text-xl md:text-2xl font-black mb-4 text-black">
+                    Render the conversation history.
+                </h2>
+                <div class="bg-gray-800 text-gray-300 brutalist-shadow border-4 border-black p-4 mt-4 font-mono">
+                    <div class="bg-gray-700 text-sm p-2 -m-4 mb-4 border-b-4 border-black flex items-center gap-2">
+                        <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                        <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                    </div>
+                    <pre class="overflow-x-auto text-lime-300"><code>for message in st.session_state.messages:
+    with st.chat_message(message["role"]):
+        st.markdown(message["content"])</code></pre>
+                </div>
+                <ul class="list-disc list-inside space-y-2 text-lg text-black font-bold mt-4">
+                    <li>Loop through messages in session state</li>
+                    <li>Use `st.chat_message` for proper formatting</li>
+                </ul>
+                <p class="mt-8 text-sm text-gray-500 font-bold">@AmrinderSingh</p>
+            </div>
+
+            <!-- Slide 9 -->
+            <div class="slide">
+                <h1 class="text-3xl md:text-4xl font-black text-black mb-4 brutalist-shadow bg-yellow-200 p-2 inline-block">
+                    <span class="text-indigo-900">🤖</span> Step 7: Configure the Gemini Model
+                </h1>
+                <h2 class="text-xl md:text-2xl font-black mb-4 text-black">
+                    Connect your app to the AI.
+                </h2>
+                <div class="bg-gray-800 text-gray-300 brutalist-shadow border-4 border-black p-4 mt-4 font-mono">
+                    <div class="bg-gray-700 text-sm p-2 -m-4 mb-4 border-b-4 border-black flex items-center gap-2">
+                        <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                        <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                    </div>
+                    <pre class="overflow-x-auto text-lime-300"><code>if api_key:
+    genai.configure(api_key=api_key)
+    model = genai.GenerativeModel('gemini-1.5-flash')</code></pre>
+                </div>
+                <ul class="list-disc list-inside space-y-2 text-lg text-black font-bold mt-4">
+                    <li>Check for a valid API key</li>
+                    <li>Initialize the Gemini 1.5 Flash model</li>
+                </ul>
+                <p class="mt-8 text-sm text-gray-500 font-bold">@AmrinderSingh</p>
+            </div>
+
+            <!-- Slide 10 -->
+            <div class="slide">
+                <h1 class="text-3xl md:text-4xl font-black text-black mb-4 brutalist-shadow bg-yellow-200 p-2 inline-block">
+                    <span class="text-indigo-900">📥</span> Step 8: Handle User Input
+                </h1>
+                <h2 class="text-xl md:text-2xl font-black mb-4 text-black">
+                    Capture and display the user's prompt.
+                </h2>
+                <div class="bg-gray-800 text-gray-300 brutalist-shadow border-4 border-black p-4 mt-4 font-mono">
+                    <div class="bg-gray-700 text-sm p-2 -m-4 mb-4 border-b-4 border-black flex items-center gap-2">
+                        <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                        <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                    </div>
+                    <pre class="overflow-x-auto text-lime-300"><code>if prompt := st.chat_input("What would you like to ask?"):
+    st.session_state.messages.append({
+        "role": "user", 
+        "content": prompt
+    })
+    with st.chat_message("user"):
+        st.markdown(prompt)</code></pre>
+                </div>
+                <ul class="list-disc list-inside space-y-2 text-lg text-black font-bold mt-4">
+                    <li>Use `st.chat_input` to get user messages</li>
+                    <li>Store the prompt in session state</li>
+                </ul>
+                <p class="mt-8 text-sm text-gray-500 font-bold">@AmrinderSingh</p>
+            </div>
+
+            <!-- Slide 11 -->
+            <div class="slide">
+                <h1 class="text-3xl md:text-4xl font-black text-black mb-4 brutalist-shadow bg-yellow-200 p-2 inline-block">
+                    <span class="text-indigo-900">🎯</span> Step 9: Get the AI Response
+                </h1>
+                <h2 class="text-xl md:text-2xl font-black mb-4 text-black">
+                    Send the prompt and get a reply from Gemini.
+                </h2>
+                <div class="bg-gray-800 text-gray-300 brutalist-shadow border-4 border-black p-4 mt-4 font-mono">
+                    <div class="bg-gray-700 text-sm p-2 -m-4 mb-4 border-b-4 border-black flex items-center gap-2">
+                        <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                        <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                    </div>
+                    <pre class="overflow-x-auto text-lime-300"><code>with st.chat_message("assistant"):
+    chat = model.start_chat(history=[])
+    response = chat.send_message(prompt)
+    full_response = response.text
+    st.markdown(full_response)
+
+st.session_state.messages.append({
+    "role": "assistant", 
+    "content": full_response
+})</code></pre>
+                </div>
+                <ul class="list-disc list-inside space-y-2 text-lg text-black font-bold mt-4">
+                    <li>Start a new chat session</li>
+                    <li>Send the user's message to the model</li>
+                    <li>Display and store the AI's response</li>
+                </ul>
+                <p class="mt-8 text-sm text-gray-500 font-bold">@AmrinderSingh</p>
+            </div>
+
+            <!-- Slide 12 -->
+            <div class="slide">
+                <h1 class="text-3xl md:text-4xl font-black text-black mb-4 brutalist-shadow bg-yellow-200 p-2 inline-block">
+                    <span class="text-indigo-900">⚠️</span> Step 10: Handle Errors Gracefully
+                </h1>
+                <h2 class="text-xl md:text-2xl font-black mb-4 text-black">
+                    Inform the user if the key is missing.
+                </h2>
+                <div class="bg-gray-800 text-gray-300 brutalist-shadow border-4 border-black p-4 mt-4 font-mono">
+                    <div class="bg-gray-700 text-sm p-2 -m-4 mb-4 border-b-4 border-black flex items-center gap-2">
+                        <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                        <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                    </div>
+                    <pre class="overflow-x-auto text-lime-300"><code>else:
+    st.info("Please enter your Gemini API Key in the sidebar to start chatting.")</code></pre>
+                </div>
+                <ul class="list-disc list-inside space-y-2 text-lg text-black font-bold mt-4">
+                    <li>Show an informative message</li>
+                    <li>Prevent runtime errors</li>
+                </ul>
+                <p class="mt-8 text-sm text-gray-500 font-bold">@AmrinderSingh</p>
+            </div>
+
+            <!-- Slide 13 -->
+            <div class="slide">
+                <h1 class="text-3xl md:text-4xl font-black text-black mb-4 brutalist-shadow bg-yellow-200 p-2 inline-block">
+                    <span class="text-indigo-900">🚀</span> Step 11: Launch Your App
+                </h1>
+                <h2 class="text-xl md:text-2xl font-black mb-4 text-black">
+                    It's time to run your application!
+                </h2>
+                <ol class="list-decimal list-inside space-y-2 text-lg text-black font-bold">
+                    <li>Save your code as `app.py`</li>
+                    <li>Run: `streamlit run app.py`</li>
+                    <li>Open your browser to `localhost:8501`</li>
+                    <li>Enter your Gemini API key</li>
+                    <li>Start chatting!</li>
+                </ol>
+                <p class="mt-8 text-sm text-gray-500 font-bold">@AmrinderSingh</p>
+            </div>
+            
+            <!-- Slide 14 -->
+            <div class="slide">
+                <h1 class="text-3xl md:text-4xl font-black text-black mb-4 brutalist-shadow bg-yellow-200 p-2 inline-block">
+                    <span class="text-indigo-900">🎉</span> What You've Built
+                </h1>
+                <h2 class="text-xl md:text-2xl font-black mb-4 text-black">
+                    Congratulations! You now have a:
+                </h2>
+                <ul class="list-disc list-inside space-y-2 text-lg text-black font-bold">
+                    <li>Functional AI chatbot (~40 lines of code)</li>
+                    <li>Secure API key handler</li>
+                    <li>Persistent chat history</li>
+                    <li>Professional Streamlit UI</li>
+                    <li>Customizable foundation for your projects</li>
+                </ul>
+                <p class="mt-6 text-lg font-black text-black">**Next Steps:** Add features, deploy to the cloud, or integrate with databases!</p>
+                <p class="mt-8 text-sm text-gray-500 font-bold">@AmrinderSingh</p>
+            </div>
+
+            <!-- Slide 15: Full Code Link -->
+            <div class="slide">
+                <h1 class="text-3xl md:text-4xl font-black text-black mb-4 brutalist-shadow bg-yellow-200 p-2 inline-block">
+                    <span class="text-indigo-900">🔗</span> Full Code
+                </h1>
+                <p class="text-2xl md:text-3xl font-black mb-4 text-black">
+                    Access the complete, runnable Python code on GitHub.
+                </p>
+                <p class="text-lg font-black text-blue-600 brutalist-shadow inline-block p-2 bg-white mt-4">
+                    https://github.com/Amrindersingh1/Tutorials/blob/main/SimpleChatbot.py
+                </p>
+                <a href="https://github.com/Amrindersingh1/Tutorials/blob/main/SimpleChatbot.py" target="_blank" class="text-lg font-black text-white bg-red-600 brutalist-button brutalist-shadow px-6 py-2 inline-block mt-4">
+                    View the Code
+                </a>
+                <p class="mt-8 text-sm text-gray-500 font-bold">@AmrinderSingh</p>
+            </div>
+            
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="flex justify-between mt-8">
+            <button id="prevBtn" class="brutalist-button brutalist-shadow bg-red-600 text-white font-black py-2 px-6 disabled:bg-gray-400">
+                Previous
+            </button>
+            <div id="page-indicator" class="text-lg font-black text-black self-center">1 / 15</div>
+            <button id="nextBtn" class="brutalist-button brutalist-shadow bg-red-600 text-white font-black py-2 px-6">
+                Next
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const pageIndicator = document.getElementById('page-indicator');
+            let currentSlide = 0;
+
+            // Function to show the current slide and update buttons
+            function showSlide(index) {
+                // Hide all slides
+                slides.forEach(slide => slide.classList.remove('active'));
+                
+                // Show the current slide
+                slides[index].classList.add('active');
+                
+                // Update page indicator
+                pageIndicator.textContent = `${index + 1} / ${slides.length}`;
+                
+                // Disable/enable buttons based on index
+                prevBtn.disabled = index === 0;
+                nextBtn.disabled = index === slides.length - 1;
+            }
+
+            // Event listener for previous button
+            prevBtn.addEventListener('click', () => {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    showSlide(currentSlide);
+                }
+            });
+
+            // Event listener for next button
+            nextBtn.addEventListener('click', () => {
+                if (currentSlide < slides.length - 1) {
+                    currentSlide++;
+                    showSlide(currentSlide);
+                }
+            });
+
+            // Initial setup
+            showSlide(currentSlide);
+        });
+    </script>
+
+</body>
+</html>
